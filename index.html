@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      #map_canvas_A label { width: auto; display:inline; }
+      #map_canvas_A img { max-width: none; }
+      #map_canvas_B label { width: auto; display:inline; }
+      #map_canvas_B img { max-width: none; }
+    </style>
   </head>
   <body>
     <blockquote class="pull-right">
@@ -62,6 +68,15 @@
                       <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                     </div>
                   </div>
+                  <div class="item">
+                    <div style="width:794px; height:456px; margin: 0 auto 0;">
+                      <div id="map_canvas_A" style="width:650px; height:350px; margin: 0 auto 0;"></div>
+                    </div>
+                    <div class="carousel-caption">
+                      <h4>Google Map in Carousel</h4>
+                      <p>How is it? Here is an example to integrate Google Map and Carousel Component of Bootstrap for more fancy user experience.</p>
+                    </div>
+                  </div>
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
@@ -71,7 +86,11 @@
       <div class="row-fluid">
         <div id="content" class="span12">
           <div class="row-fluid">
-            <div class="span12 well">
+            <div class="span12 well well-small">
+              <div id="search-panel">
+                <input id="target" type="text" placeholder="Search Box">
+              </div>
+              <div id="map_canvas_B" style="width:794px; height:456px; margin: 0 auto 0;"></div>
             </div>
           </div>
           <div class="row-fluid">
@@ -133,5 +152,7 @@
     </div>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDzGlmM7U3lBCNC4ShvUqG5EQOLOV34b1s&sensor=true&language=zh-TW"></script>
+    <script src="js/tripall.js"></script>
   </body>
 </html>
