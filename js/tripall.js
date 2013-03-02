@@ -1,5 +1,41 @@
 var map;
 
+$(function() {
+  $( "#sortable1, #sortable2, #sortable3" ).sortable().disableSelection();
+
+  var $searchTab = $( "#searchTab" ).tabs();
+  var $search_items = $( "ul:first li", $searchTab ).droppable({
+    accept: ".connectedSortable li",
+    hoverClass: "ui-state-hover",
+    drop: function( event, ui ) {
+      var $item = $( this );
+      var $list = $( $item.find( "a" ).attr( "href" ) )
+        .find( ".connectedSortable" );
+
+      ui.draggable.hide( "slow", function() {
+        $searchTab.tabs( "option", "active", $tab_items.index( $item ) );
+        $( this ).appendTo( $list ).show( "slow" );
+      });
+    }
+  });
+
+  var $tabs = $( "#tabs" ).tabs();
+  var $tab_items = $( "ul:first li", $tabs ).droppable({
+    accept: ".connectedSortable li",
+    hoverClass: "ui-state-hover",
+    drop: function( event, ui ) {
+      var $item = $( this );
+      var $list = $( $item.find( "a" ).attr( "href" ) )
+        .find( ".connectedSortable" );
+
+      ui.draggable.hide( "slow", function() {
+        $tabs.tabs( "option", "active", $tab_items.index( $item ) );
+        $( this ).appendTo( $list ).show( "slow" );
+      });
+    }
+  });
+});
+
 function initialize_normal() {
   var mapOptions = {
     center: new google.maps.LatLng(-34.397, 150.644),
