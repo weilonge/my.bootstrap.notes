@@ -16,22 +16,12 @@ function setDrabableTab(tabId) {
       });
     }
   });
-
-  $("ul.connectedSortable").droppable({
-    accept: ".connectedSortable li",
-    hoverClass: "ui-state-hover",
-    drop: function( event, ui ) { 
-      var $list = $( this );
-
-      ui.draggable.hide( "fast", function() {
-        $( this ).appendTo( $list ).show( "fast" );
-      }); 
-    }   
-  }); 
 }
 
 $(function() {
-  $( "#sortable1, #sortable2, #sortable3" ).sortable().disableSelection();
+  $( "#sortable1, #sortable2, #sortable3" ).sortable({
+    connectWith: ".connectedSortable"
+  }).disableSelection();
 
   setDrabableTab("#searchTab");
   setDrabableTab("#tabs");
