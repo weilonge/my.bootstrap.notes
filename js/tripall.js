@@ -13,7 +13,7 @@ $(function() {
         .find( ".connectedSortable" );
 
       ui.draggable.hide( "slow", function() {
-        $searchTab.tabs( "option", "active", $tab_items.index( $item ) );
+        $searchTab.tabs( "option", "active", $search_items.index( $item ) );
         $( this ).appendTo( $list ).show( "slow" );
       });
     }
