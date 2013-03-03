@@ -16,6 +16,18 @@ function setDrabableTab(tabId) {
       });
     }
   });
+
+  $("ul.connectedSortable").droppable({
+    accept: ".connectedSortable li",
+    hoverClass: "ui-state-hover",
+    drop: function( event, ui ) { 
+      var $list = $( this );
+
+      ui.draggable.hide( "fast", function() {
+        $( this ).appendTo( $list ).show( "fast" );
+      }); 
+    }   
+  }); 
 }
 
 $(function() {
