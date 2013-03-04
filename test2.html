@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <style type="text/css" >
+        .take6-card {
+            width: 150px;
+            height: 210px;
+            border-width: 3px;
+            border-color: black;
+            border-style: solid;
+            background-color: white;
+             
+            border-radius: 10px 10px 10px 10px;
+        }
+    </style>
+    <script src="js/kinetic-v4.3.3.min.js"></script>
+</head>
+<body>
+    <div id="t6" class="take6-card">
+    </div>
+    <script>
+      var stage = new Kinetic.Stage({
+        container: 't6',
+        width: 150,
+        height: 210
+      });
+
+      var layerBackground = new Kinetic.Layer();
+
+      var polyBackground = new Kinetic.Polygon({
+        points: [15, 15, 135, 20, 135, 195, 20, 190],
+        fill: 'purple',
+        //stroke: 'black',
+        strokeWidth: 0
+      });
+
+      // add the shape to the layer
+      layerBackground.add(polyBackground);
+
+      // add the layer to the stage
+      stage.add(layerBackground);
+    </script>
+</body>
+</html>
