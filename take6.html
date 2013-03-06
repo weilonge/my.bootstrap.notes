@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title></title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
     <style type="text/css" >
         .take6-card {
             width: 150px;
@@ -13,34 +14,37 @@
             border-radius: 10px 10px 10px 10px;
         }
     </style>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src="js/kinetic-v4.3.3.min.js"></script>
     <script src="js/take6.js"></script>
 </head>
 <body>
-    <div id="t6" class="take6-card">
+    <div id="t50" class="take6-card">
+    </div>
+    <div id="t51" class="take6-card">
+    </div>
+    <div id="t52" class="take6-card">
+    </div>
+    <div id="t53" class="take6-card">
+    </div>
+    <div id="t54" class="take6-card">
+    </div>
+    <div id="t55" class="take6-card">
+    </div>
+    <div id="t56" class="take6-card">
+    </div>
+    <div id="t57" class="take6-card">
+    </div>
+    <div id="t58" class="take6-card">
+    </div>
+    <div id="t59" class="take6-card">
     </div>
     <script>
-      var stage = new Kinetic.Stage({
-        container: 't6',
-        width: 150,
-        height: 210
-      });
-
-      var layerBackground = new Kinetic.Layer();
-
-      var layerBackground2 = new Kinetic.Layer({
-        x: 10,
-        y: 30,
-        scale: 1.5
-      });
-      
-      // add the shape to the layer
-      layerBackground.add(getBackground('purple'));
-      layerBackground2.add(getLogo('red'));
-
-      // add the layer to the stage
-      stage.add(layerBackground);
-      stage.add(layerBackground2);
+      for(var i = 50; i<60; i++){
+        setCard("t" + i.toString(), i);
+        $('#t' + i.toString()).draggable();
+      }
     </script>
 </body>
 </html>
