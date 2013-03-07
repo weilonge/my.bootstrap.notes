@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
     <style type="text/css" >
         .take6-card {
+            border-width: 0px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .take6-card-with-radius-border {
             width: 150px;
             height: 210px;
             border-width: 3px;
@@ -20,10 +25,7 @@
     <script src="js/take6.js"></script>
 </head>
 <body>
-    <div id="t50" class="take6-card">
-    </div>
-    <div id="t51" class="take6-card">
-    </div>
+    <a href="#" id="button" class="ui-state-default ui-corner-all">Run Effect</a>
     <div id="t52" class="take6-card">
     </div>
     <div id="t53" class="take6-card">
@@ -32,19 +34,5 @@
     </div>
     <div id="t55" class="take6-card">
     </div>
-    <div id="t56" class="take6-card">
-    </div>
-    <div id="t57" class="take6-card">
-    </div>
-    <div id="t58" class="take6-card">
-    </div>
-    <div id="t59" class="take6-card">
-    </div>
-    <script>
-      for(var i = 50; i<60; i++){
-        setCard("t" + i.toString(), i);
-        $('#t' + i.toString()).draggable();
-      }
-    </script>
 </body>
 </html>

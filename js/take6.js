@@ -1,18 +1,59 @@
-function setCard(id, value) {
-  var stage = new Kinetic.Stage({
-    container: id,
-    width: 150,
-    height: 210
+$(function (){
+  for(var i = 52; i<56; i++){
+    setCard("t" + i.toString(), i);
+  }
+
+  function callback() {
+    setTimeout(function() {
+      $( "#t55" ).hide().fadeIn();
+    }, 1000 );
+  };
+
+  $( "#button" ).click(function() {
+    $( "#t55" ).effect( 'blind', null, 500, callback );
+    return false;
   });
-  stage.add(getCard(value));
+});
+
+function setCard(id, value) {
+  var CARD_H = 210;
+  var CARD_W = 150;
+  var CARD_SCALE = 0.75;
+
+  var card$ = $('#' + id);
+  card$.draggable();
+  card$.height( CARD_H * CARD_SCALE );
+  card$.width( CARD_W * CARD_SCALE );
+
+  var stage = new Kinetic.Stage({
+    width: CARD_W * CARD_SCALE + 3,
+    height: CARD_H * CARD_SCALE + 3,
+    scale: CARD_SCALE,
+    container: id,
+    id: 'can_' + id
+  });
+  stage.add(getCard(value, CARD_W, CARD_H));
 }
 
-function getCard(number, x, y) {
-  var card= new Kinetic.Layer({
+function rect(w, h) {
+  var rr = new Kinetic.Rect({
+    width: w,
+    height: h,
+    stroke: 'black',
+    strokeWidth: 3,
+    fill: 'white',
+    cornerRadius: 15
+  });
+  return rr;
+}
+
+function getCard(number, w, h) {
+  var card = new Kinetic.Layer({
     x: 0,
     y: 0,
     scale: 1
   });
+  card.add(rect(w, h));
   if( 0 == (number % 5) && 0 == ( number % 11) ) {
     card.add(getBackground('purple'));
 
