@@ -15,8 +15,18 @@ function createTable(id) {
   });
   var scoreList = [1, 5, 10, 11, 55, 100, 101, 102, 103, 104];
   for(var i in scoreList ){
-    var ccc = drawCard(scoreList[i], CARD_W, CARD_H,  i*120 + 3,  i*60 + 3);
+    var ccc = drawCard(scoreList[i], CARD_W, CARD_H,  i*100 + 25,  500);
     ccc.setDraggable(true);
+    ccc.on('mouseover', function (){
+      //this.prevZIndex = this.getZIndex();
+      console.log("A" + this.getZIndex());
+      this.moveToTop();
+      console.log("B" + this.getZIndex());
+    });
+    ccc.on('mouseover', function (){
+      console.log("C" + this.getZIndex());
+      //this.setZIndex(this.prevZIndex);
+    });
     stage.add( ccc );
   }
 }
