@@ -13,9 +13,9 @@ function createTable(id) {
     container: id,
     id: 'can_' + id
   });
-  var scoreList = [1, 2, 5, 10, 11, 55];
-  for(var i = 0; i<6; i++){
-    var ccc = drawCard(scoreList[i], CARD_W, CARD_H,  i*50 + 3,  i*80 + 3);
+  var scoreList = [1, 5, 10, 11, 55, 100, 101, 102, 103, 104];
+  for(var i in scoreList ){
+    var ccc = drawCard(scoreList[i], CARD_W, CARD_H,  i*120 + 3,  i*60 + 3);
     ccc.setDraggable(true);
     stage.add( ccc );
   }
