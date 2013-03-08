@@ -1,3 +1,6 @@
+var TABLE_H = 600;
+var TABLE_W = 960;
+
 var CARD_H = 210;
 var CARD_W = 150;
 var CARD_SCALE = 0.75;

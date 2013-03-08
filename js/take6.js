@@ -3,9 +3,12 @@ $(function (){
 });
 
 function createTable(id) {
+  $('#' + id).height(TABLE_H);
+  $('#' + id).width(TABLE_W);
+
   var stage = new Kinetic.Stage({
-    width: 500,
-    height: 500,
+    width: TABLE_W,
+    height: TABLE_H,
     scale: CARD_SCALE,
     container: id,
     id: 'can_' + id
